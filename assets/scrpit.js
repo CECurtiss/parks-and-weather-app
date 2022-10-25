@@ -30,7 +30,6 @@ var stateCode = "ks"
 var searchButton = document.getElementById("search-btn")
 var stateCardTwo = document.getElementById("grid-two")
 var stateCardThree = document.getElementById("grid-three")
-var 
 
 function searchState() {
     
