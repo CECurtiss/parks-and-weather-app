@@ -12,111 +12,111 @@ var stateInput = document.getElementById("search-input");
 function stateCodeSearch() {
     //removes any former search results from the div
     stateCardEight.innerHTML = "";
-    //defines variable for text entered into the input bar
-    var stateName = stateInput.value;
+    //defines variable for text entered into the input bar, converts entry to lowercase
+    var stateName = stateInput.value.toLowerCase();
     //checks text entered in input bar for corresponding state
-    if (stateName === "Alabama" || stateName === "alabama" || stateName === "ALABAMA" || stateName === "al" || stateName === "AL") {
+    if (stateName === "alabama" || stateName === "al") {
         //Defines stateCode variable as two-letter state code
         var stateCode = "al"
-    } else if (stateName === "Alaska" || stateName === "alaska" || stateName === "ALASKA" || stateName === "ak" || stateName === "AK") {
+    } else if (stateName === "alaska" || stateName === "ak") {
         var stateCode = "ak"
-    } else if (stateName === "Arizona" || stateName === "arizona" || stateName === "ARIZONA" || stateName === "az" || stateName === "AZ") {
+    } else if (stateName === "arizona" || stateName === "az") {
         var stateCode = "az"
-    } else if (stateName === "Arkansas" || stateName === "arkansas" || stateName === "ARKANSAS" || stateName === "ar" || stateName === "AR") {
+    } else if (stateName === "arkansas" || stateName === "ar") {
         var stateCode = "ar"
-    } else if (stateName === "California" || stateName === "california" || stateName === "CALIFORNIA" || stateName === "ca" || stateName === "CA") {
+    } else if (stateName === "california" || stateName === "ca") {
         var stateCode = "ca"
-    } else if (stateName === "Colorado" || stateName === "colorado" || stateName === "COLORADO" || stateName === "co" || stateName === "CO") {
+    } else if (stateName === "colorado" || stateName === "co") {
         var stateCode = "co"
-    } else if (stateName === "Connecticut" || stateName === "connecticut" || stateName === "CONNECTICUT" || stateName === "ct" || stateName === "CT") {
+    } else if (stateName === "connecticut" || stateName === "ct") {
         var stateCode = "ct"
-    } else if (stateName === "Delaware" || stateName === "delaware" || stateName === "DELAWARE" || stateName === "de" || stateName === "DE") {
+    } else if (stateName === "delaware" || stateName === "de") {
         var stateCode = "de"
-    } else if (stateName === "Florida" || stateName === "florida" || stateName === "FLORIDA" || stateName === "fl" || stateName === "FL") {
+    } else if (stateName === "florida" || stateName === "fl") {
         var stateCode = "fl"
-    } else if (stateName === "Georgia" || stateName === "georgia" || stateName === "GEORGIA" || stateName === "ga" || stateName === "GA") {
+    } else if (stateName === "georgia" || stateName === "ga") {
         var stateCode = "ga"
-    } else if (stateName === "Hawaii" || stateName === "hawaii" || stateName === "HAWAII" || stateName === "hi" || stateName === "HI") {
+    } else if (stateName === "hawaii" || stateName === "hi") {
         var stateCode = "hi"
-    } else if (stateName === "Idaho" || stateName === "idaho" || stateName === "IDAHO" || stateName === "id" || stateName === "ID") {
+    } else if (stateName === "idaho" || stateName === "id") {
         var stateCode = "id"
-    } else if (stateName === "Illinois" || stateName === "illinois" || stateName === "ILLINOIS" || stateName === "il" || stateName === "IL") {
+    } else if (stateName === "illinois" || stateName === "il") {
         var stateCode = "il"
-    } else if (stateName === "Indiana" || stateName === "indiana" || stateName === "INDIANA" || stateName === "in" || stateName === "IN") {
+    } else if (stateName === "indiana" || stateName === "in") {
         var stateCode = "in"
-    } else if (stateName === "Iowa" || stateName === "iowa" || stateName === "IOWA" || stateName === "ia" || stateName === "IA") {
+    } else if (stateName === "iowa" || stateName === "ia") {
         var stateCode = "ia"
-    } else if (stateName === "Kansas" || stateName === "kansas" || stateName === "KANSAS" || stateName === "ks" || stateName === "KS") {
+    } else if (stateName === "kansas" || stateName === "ks") {
         var stateCode = "ks"
-    } else if (stateName === "Kentucky" || stateName === "kentucky" || stateName === "KENTUCKY" || stateName === "ky" || stateName === "KY") {
+    } else if (stateName === "kentucky" || stateName === "ky") {
         var stateCode = "ky"
-    } else if (stateName === "Louisiana" || stateName === "louisiana" || stateName === "LOUISIANA" || stateName === "la" || stateName === "LA") {
+    } else if (stateName === "louisiana" || stateName === "la") {
         var stateCode = "la"
-    } else if (stateName === "Maine" || stateName === "maine" || stateName === "MAINE" || stateName === "me" || stateName === "ME") {
+    } else if (stateName === "maine" || stateName === "me") {
         var stateCode = "me"
-    } else if (stateName === "Maryland" || stateName === "maryland" || stateName === "MARYLAND" || stateName === "md" || stateName === "MD") {
+    } else if (stateName === "maryland" || stateName === "md") {
         var stateCode = "md"
-    } else if (stateName === "Massachusetts" || stateName === "massachusetts" || stateName === "MASSACHUSETTS" || stateName === "ma" || stateName === "MA") {
+    } else if (stateName === "massachusetts" || stateName === "ma") {
         var stateCode = "ma"
-    } else if (stateName === "Michigan" || stateName === "michigan" || stateName === "MICHIGAN" || stateName === "mi" || stateName === "MI") {
+    } else if (stateName === "michigan" || stateName === "mi") {
         var stateCode = "mi"
-    } else if (stateName === "Minnesota" || stateName === "minnesota" || stateName === "MINNESOTA" || stateName === "mn" || stateName === "MN") {
+    } else if (stateName === "minnesota" || stateName === "mn") {
         var stateCode = "mn"
-    } else if (stateName === "Mississippi" || stateName === "mississippi" || stateName === "MISSISSIPPI" || stateName === "ms" || stateName === "MS") {
+    } else if (stateName === "mississippi" || stateName === "ms") {
         var stateCode = "ms"
-    } else if (stateName === "Missouri" || stateName === "missouri" || stateName === "MISSOURI" || stateName === "mo" || stateName === "MO") {
+    } else if (stateName === "missouri" || stateName === "mo") {
         var stateCode = "mo"
-    } else if (stateName === "Montana" || stateName === "montana" || stateName === "MONTANA" || stateName === "mt" || stateName === "MT") {
+    } else if (stateName === "montana" || stateName === "mt") {
         var stateCode = "mt"
-    } else if (stateName === "Nebraska" || stateName === "nebraska" || stateName === "NEBRASKA" || stateName === "ne" || stateName === "NE") {
+    } else if (stateName === "nebraska" || stateName === "ne") {
         var stateCode = "ne"
-    } else if (stateName === "Nevada" || stateName === "nevada" || stateName === "NEVADA" || stateName === "nv" || stateName === "NV") {
+    } else if (stateName === "nevada" || stateName === "nv") {
         var stateCode = "nv"
-    } else if (stateName === "New Hampshire" || stateName === "new hampshire" || stateName === "NEW HAMPSHIRE" || stateName === "nh" || stateName === "NH") {
+    } else if (stateName === "new hampshire" || stateName === "nh") {
         var stateCode = "nh"
-    } else if (stateName === "New Jersey" || stateName === "new jersey" || stateName === "NEW JERSEY" || stateName === "nj" || stateName === "NJ") {
+    } else if (stateName === "new jersey" || stateName === "nj") {
         var stateCode = "nj"
-    } else if (stateName === "New Mexico" || stateName === "new mexico" || stateName === "NEW MEXICO" || stateName === "nm" || stateName === "NM") {
+    } else if (stateName === "new mexico" || stateName === "nm") {
         var stateCode = "nm"
-    } else if (stateName === "New York" || stateName === "new york" || stateName === "NEW YORK" || stateName === "ny" || stateName === "NY") {
+    } else if (stateName === "new york" || stateName === "ny") {
         var stateCode = "ny"
-    } else if (stateName === "North Carolina" || stateName === "north carolina" || stateName === "NORTH CAROLINA" || stateName === "nc" || stateName === "NC") {
+    } else if (stateName === "north carolina" || stateName === "nc") {
         var stateCode = "nc"
-    } else if (stateName === "North Dakota" || stateName === "north dakota" || stateName === "NORTH DAKOTA" || stateName === "nd" || stateName === "ND") {
+    } else if (stateName === "north dakota" || stateName === "nd") {
         var stateCode = "nd"
-    } else if (stateName === "Ohio" || stateName === "ohio" || stateName === "OHIO" || stateName === "oh" || stateName === "OH") {
+    } else if (stateName === "ohio" || stateName === "oh") {
         var stateCode = "oh"
-    } else if (stateName === "Oklahoma" || stateName === "oklahoma" || stateName === "OKLAHOMA" || stateName === "ok" || stateName === "OK") {
+    } else if (stateName === "oklahoma" || stateName === "ok") {
         var stateCode = "ok"
-    } else if (stateName === "Oregon" || stateName === "oregon" || stateName === "OREGON" || stateName === "or" || stateName === "OR") {
+    } else if (stateName === "oregon" || stateName === "or") {
         var stateCode = "or"
-    } else if (stateName === "Pennsylvania" || stateName === "pennsylvania" || stateName === "PENNSYLVANIA" || stateName === "pa" || stateName === "PA") {
+    } else if (stateName === "pennsylvania" || stateName === "pa") {
         var stateCode = "pa"
-    } else if (stateName === "Puerto Rico" || stateName === "puerto rico" || stateName === "PUERTO RICO" || stateName === "pr" || stateName === "PR") {
+    } else if (stateName === "puerto rico" || stateName === "pr") {
         var stateCode = "pr"
-    } else if (stateName === "Rhode Island" || stateName === "rhode island" || stateName === "RHODE ISLAND" || stateName === "ri" || stateName === "RI") {
+    } else if (stateName === "rhode island" || stateName === "ri") {
         var stateCode = "ri"
-    } else if (stateName === "South Carolina" || stateName === "south carolina" || stateName === "SOUTH CAROLINA" || stateName === "sc" || stateName === "SC") {
+    } else if (stateName === "south carolina" || stateName === "sc") {
         var stateCode = "sc"
-    } else if (stateName === "South Dakota" || stateName === "south dakota" || stateName === "SOUTH DAKOTA" || stateName === "sd" || stateName === "SD") {
+    } else if (stateName === "south dakota" || stateName === "sd") {
         var stateCode = "sd"
-    } else if (stateName === "Tennessee" || stateName === "tennessee" || stateName === "TENNESSEE" || stateName === "tn" || stateName === "TN") {
+    } else if (stateName === "tennessee" || stateName === "tn") {
         var stateCode = "tn"
-    } else if (stateName === "Texas" || stateName === "texas" || stateName === "TEXAS" || stateName === "tx" || stateName === "TX") {
+    } else if (stateName === "texas" || stateName === "tx") {
         var stateCode = "tx"
-    } else if (stateName === "Utah" || stateName === "utah" || stateName === "UTAH" || stateName === "ut" || stateName === "UT") {
+    } else if (stateName === "utah" || stateName === "ut") {
         var stateCode = "ut"
-    } else if (stateName === "Vermont" || stateName === "vermont" || stateName === "VERMONT" || stateName === "vt" || stateName === "VT") {
+    } else if (stateName === "vermont" || stateName === "vt") {
         var stateCode = "vt"
-    } else if (stateName === "Virginia" || stateName === "virginia" || stateName === "VIRGINIA" || stateName === "va" || stateName === "VA") {
+    } else if (stateName === "virginia" || stateName === "va") {
         var stateCode = "va"
-    } else if (stateName === "Washington" || stateName === "washington" || stateName === "WASHINGTON" || stateName === "wa" || stateName === "WA") {
+    } else if (stateName === "washington" || stateName === "wa") {
         var stateCode = "wa"
-    } else if (stateName === "West Virginia" || stateName === "west virginia" || stateName === "WEST VIRGINIA" || stateName === "wv" || stateName === "WV") {
+    } else if (stateName === "west virginia" || stateName === "wv") {
         var stateCode = "wv"
-    } else if (stateName === "Wisconsin" || stateName === "wisconsin" || stateName === "WISCONSIN" || stateName === "wi" || stateName === "WI") {
+    } else if (stateName === "wisconsin" || stateName === "wi") {
         var stateCode = "wi"
-    } else if (stateName === "Wyoming" || stateName === "wyoming" || stateName === "WYOMING" || stateName === "wy" || stateName === "WY") {
+    } else if (stateName === "wyoming" || stateName === "wy") {
         var stateCode = "wy"
     //If text entered is not recognized as a valid state name, alert box prompts user to enter valid state name
     } else {
@@ -138,17 +138,22 @@ function stateCodeSearch() {
             console.log(data);
             //creates a loop to create a park card for each object returned by fetch URL
             for(i = 0; i < data.data.length; i++) {
-            var nameEl = document.createElement("h2"); //<--Should we make this a link to the park info page?
+            var nameEl = document.createElement("a"); //<--Should we make this a link to the park info page?
             //var latEl = document.createElement("ul");                 [lattitude coordinates]
             //var lonEl = document.createElement("ul");                 [longitude coordinates]
             var imgEl = document.createElement("img");
             var divEl = document.createElement("div");
-            var descriptionDivEl = document.createElement("div");
-            
+            var descriptionDivEl = document.createElement("div"); 
             stateCardEight.appendChild(divEl);
             divEl.classList.add("divel-style");
             divEl.appendChild(nameEl);
-            nameEl.innerHTML = data.data[i].fullName;                    
+            nameEl.innerHTML = data.data[i].fullName;
+            nameEl.setAttribute("href", "./index.html");
+            //sets id as park code for storeParkCode() function [!!THIS MAY NEED TO CHANGE IF ID IS NEEDED FOR CSS STYLING!!]
+            nameEl.setAttribute("id", data.data[i].parkCode)
+            //sets title as zip code for storeParkCode() function
+            nameEl.setAttribute("title", data.data[0].addresses[0].postalCode)
+            nameEl.setAttribute("onclick", "storeParkCode()")       
             //divEl.appendChild(latEl);                                 [lattitude coordinates]
             //latEl.innerHTML = data.data[i].latitude;                  [lattitude coordinates]
             //divEl.appendChild(lonEl);                                 [longitude coordinates]
@@ -157,10 +162,23 @@ function stateCodeSearch() {
             imgEl.setAttribute("src", data.data[i].images[0].url);
             divEl.appendChild(descriptionDivEl);
             descriptionDivEl.innerHTML = data.data[i].description;
-            }
+            } 
+            
         })
     }
+
     searchState();
+}
+
+//function to set unique park code information to local storage
+function storeParkCode() {
+    //defines variable for park code
+    var parkCodeID = window.event.target.id
+    //defines variable for zip code
+    var parkCodeZip = window.event.target.title
+    //sets park code, zip code to local storage
+    localStorage.setItem("parkcode", parkCodeID)
+    localStorage.setItem("zip", parkCodeZip)
 }
 
 searchButton.addEventListener("click", stateCodeSearch);
