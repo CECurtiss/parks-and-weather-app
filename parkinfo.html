@@ -4,10 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link red="stylesheet" href="assets\style.css">
+    <title>Park Details and 5 Day Forecast</title>
+    <link rel="stylesheet" href="assets\style.css">
 </head>
-<body>
+<body style="background: rgb(77, 121, 29)">
+    <header >
+        <h1 style= "font-size:60px; text-align:center; padding: 30px;" id = "parkname">park</h1>
+    </header>
+
+    <div style= "background:white" id="fivedayforecast">
+        <section>forecast</section>
+    </div>
     
+    <div class="container" style = "background:rgb(215, 156, 68); height:50%;">
+         <div style = "border-style: solid; width:75%; display:flex;">
+             <p id = "parkinfo">info</p>
+             <p id = "parkcost"></p>
+             <p id = "parkhours"></p>
+        </div>
+
+         <div stlye="display:flex;">
+             <img src="parkimages"></img>
+         </div>
+    </div>
+
+    <!-- <div id="fiveday"></div>
+        <h2 id="card col-3"></h2>
+        <div class="temp">Temp:</div>
+        <div></div>
+        <div></div> -->
+
+
+    <script src="assets\script.js"></script>
 </body>
 </html>
