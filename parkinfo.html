@@ -8,19 +8,65 @@
     <link rel="stylesheet" href="assets\style.css">
 </head>
 <body style="background: rgb(77, 121, 29)">
+    <button id="returntomain">Go Back</button>
     <header >
         <h1 style= "font-size:60px; text-align:center; padding: 30px;" id = "parkname">park</h1>
     </header>
 
     <div style= "background:white" id="fivedayforecast">
-        <section>forecast</section>
+        <div class="card">
+            <div class="container">
+                <h2 id="carddate">text</h2>
+                <p class="cardtemp">text</p>
+                <p class="chancerain">text</p>  
+                <!-- ^^ list.pop in weatherAPI (x * 100 = percentage chance of rain)-->
+                <p class="rainfall">text</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="container">
+                <h2 id="carddate">text</h2>
+                <p class="cardtemp">text</p>
+                <p class="chancerain">text</p>
+                <p class="rainfall">text</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="container">
+                <h2 id="carddate">text</h2>
+                <p class="cardtemp">text</p>
+                <p class="chancerain">text</p>
+                <p class="rainfall">text</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="container">
+                <h2 id="carddate">text</h2>
+                <p class="cardtemp">text</p>
+                <p class="chancerain">text</p>
+                <p class="rainfall">text</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="container">
+                <h2 id="carddate">text</h2>
+                <p class="cardtemp">text</p>
+                <p class="chancerain">text</p>  
+                <p class="rainfall">text</p>
+            </div>
+        </div>
     </div>
     
     <div class="container" style = "background:rgb(215, 156, 68); height:50%;">
          <div style = "border-style: solid; width:75%; display:flex;">
-             <p id = "parkinfo">info</p>
+             <p id = "longdescript">info</p>
              <p id = "parkcost"></p>
              <p id = "parkhours"></p>
+             <p id = "petsdescription"></p>
         </div>
 
          <div stlye="display:flex;">
@@ -28,11 +74,6 @@
          </div>
     </div>
 
-    <!-- <div id="fiveday"></div>
-        <h2 id="card col-3"></h2>
-        <div class="temp">Temp:</div>
-        <div></div>
-        <div></div> -->
 
 
     <script src="assets\script.js"></script>
