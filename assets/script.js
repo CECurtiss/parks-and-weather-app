@@ -182,3 +182,57 @@ function storeParkCode() {
 }
 
 searchButton.addEventListener("click", stateCodeSearch);
+
+//ParkInfo.html js
+// select div to append response
+var divClass = $(".cardPgTwo")
+// variables for response
+var forecastDate = {};
+var weatherIcon = {};
+var temp = {};
+var humidity = {};
+var windSpeed = {};
+var chanceRain = {};
+var rainVol = {};
+
+var currentDate = moment().format('L');
+// pull zip code from local storage
+function retrieveLocation() {
+    var location = JSON.parse(localStorage.getItem("zip"));
+    function currentWeather(){
+        var weatherUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + location + "&units=imperial&appid=f5ca5829ecc4bf04f1d13831ce88f110";
+        
+        fetch(weatherUrl)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(response) {
+            console.log(response);
+            for (var i = 0; i < 40; i += 8){
+                forecastDate[i] = response.list[i].dt_txt;
+                weatherIcon[i] = response.list[i].weather[0].icon;
+                temp[i] = response.list[i].main.temp;
+                humidity[i] = response.list[i].main.humidity;
+                windSpeed[i] = response.list[i].wind.speed;
+                chanceRain[i] = response.list[i].pop;
+                console.log(weatherIcon);
+                // rainVol[i] = response.list[i].rain.3h;
+                    // can not get response due to number "3"
+                var newCard = $("<div>").attr("class", "card");
+                divClass.append(newCard);
+                var newH2 = $("<h2>").attr("id", "carddate").text(moment(forecastDate[i]).format("dddd " + "L"));
+                newCard.append(newH2);
+                // var newIcon = $("<img>").attr("class", "carddate").attr("srs", "https://openweathermap.org/img/wn/" + weatherIcon[i] + "@2x.png");
+                // newCard.append(newIcon);
+                var tempP = $("<p>").attr("class", "cardtemp").text("Temperature: " + temp[i] + "F");
+                newCard.append(tempP);
+                var rainChanceP = $("<p>").attr("class", "cardtemp").text("Chance of Rain: " + chanceRain[i] * 100 + "%");
+                newCard.append(rainChanceP);
+            //     var newVol = $("<p>").attr("class", "cardtemp").text("3 Hour rain volume: " + rainVol[i]);
+            //     newCard.append(newVol);
+            }
+            
+        })
+    }
+    currentWeather();
+}
