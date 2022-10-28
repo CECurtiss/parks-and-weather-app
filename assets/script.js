@@ -1,17 +1,14 @@
 //global variables
-var searchButton = document.getElementById("search-btn");
-var stateCardTwo = document.getElementById("grid-two");
-var stateCardThree = document.getElementById("grid-three");
-var stateCardFour = document.getElementById("grid-four");
-var stateCardFive = document.getElementById("grid-five");
-var stateCardEight = document.getElementById("grid-eight");
-
+//grabs search button
+var searchButton = document.getElementById("searchBtn");
+//grabs park card container div for dynamic park card creation
+var parkCardContainer = document.getElementById("park-card-container");
 //grabs input bar
 var stateInput = document.getElementById("search-input");
 //function to convert state name in input bar into two-letter state code
 function stateCodeSearch() {
     //removes any former search results from the div
-    stateCardEight.innerHTML = "";
+    parkCardContainer.innerHTML = "";
     //defines variable for text entered into the input bar, converts entry to lowercase
     var stateName = stateInput.value.toLowerCase();
     //checks text entered in input bar for corresponding state
@@ -137,40 +134,60 @@ function stateCodeSearch() {
             //console.logs object string returned by fetch URL for reference
             console.log(data);
             //creates a loop to create a park card for each object returned by fetch URL
-            for(i = 0; i < data.data.length; i++) {
-            var nameEl = document.createElement("a"); //<--Should we make this a link to the park info page?
-            //var latEl = document.createElement("ul");                 [lattitude coordinates]
-            //var lonEl = document.createElement("ul");                 [longitude coordinates]
-            var imgEl = document.createElement("img");
-            var divEl = document.createElement("div");
-            var descriptionDivEl = document.createElement("div"); 
-            stateCardEight.appendChild(divEl);
-            divEl.classList.add("divel-style");
-            divEl.appendChild(nameEl);
+            for(i =0; i < data.data.length; i++) {
+            //creates foundation-sites styling card div
+            var cell = document.createElement("div");
+            //assigns classes for foundation-sites styling
+            cell.classList.add("cell");
+            cell.classList.add("small-12");
+            cell.classList.add("medium-6");
+            //creates park card div
+            var containerEl = document.createElement("div");
+            containerEl.classList.add("card");
+            //creates park name div
+            var nameElContainer = document.createElement("div");
+            nameElContainer.classList.add("card-divider");
+            //creates park name as link to parkinfo.html
+            var nameEl = document.createElement("a");
+            //links to parkinfo.html
+            nameEl.setAttribute("href", "./parkinfo.html");
+            //sets id as parkCode to be saved in local storage for use in parkinfo.html
+            nameEl.setAttribute("id", data.data[i].parkCode);
+            //sets title to zip code to be saved in local storage for use in parkinfo.html
+            nameEl.setAttribute("title", data.data[0].addresses[0].postalCode);
+            //creates onclick function to save to local storage
+            nameEl.setAttribute("onclick", "storeParkCode()");  
             nameEl.innerHTML = data.data[i].fullName;
-            nameEl.setAttribute("href", "./index.html");
-            //sets id as park code for storeParkCode() function [!!THIS MAY NEED TO CHANGE IF ID IS NEEDED FOR CSS STYLING!!]
-            nameEl.setAttribute("id", data.data[i].parkCode)
-            //sets title as zip code for storeParkCode() function
-            nameEl.setAttribute("title", data.data[0].addresses[0].postalCode)
-            nameEl.setAttribute("onclick", "storeParkCode()")       
-            //divEl.appendChild(latEl);                                 [lattitude coordinates]
-            //latEl.innerHTML = data.data[i].latitude;                  [lattitude coordinates]
-            //divEl.appendChild(lonEl);                                 [longitude coordinates]
-            //lonEl.innerHTML = data.data[i].longitude                  [longitude coordinates]
-            divEl.appendChild(imgEl);
+            //creates div for image
+            var imgDiv = document.createElement("div");
+            imgDiv.classList.add("card-section");
+            //creates image element
+            var imgEl = document.createElement("img");
+            //sets image element to specific park image
             imgEl.setAttribute("src", data.data[i].images[0].url);
-            divEl.appendChild(descriptionDivEl);
-            descriptionDivEl.innerHTML = data.data[i].description;
-            } 
-            
+            //creates park description div
+            var descriptionElContainer = document.createElement("div");
+            //creates park description paragraph element
+            var descriptionEl = document.createElement("p");
+            descriptionElContainer.classList.add("card-section");
+            descriptionEl.innerHTML = data.data[i].description;
+            //appends above created children elements to their respective parents
+            imgDiv.appendChild(imgEl);
+            descriptionElContainer.appendChild(descriptionEl);
+            nameElContainer.appendChild(nameEl);
+            containerEl.appendChild(nameElContainer);
+            containerEl.appendChild(imgDiv);
+            containerEl.appendChild(descriptionElContainer);
+            cell.appendChild(containerEl)
+            parkCardContainer.appendChild(cell);
+            }      
         })
     }
 
     searchState();
 }
 
-//function to set unique park code information to local storage
+//function to set unique park code/zip code information to local storage
 function storeParkCode() {
     //defines variable for park code
     var parkCodeID = window.event.target.id
@@ -181,8 +198,11 @@ function storeParkCode() {
     localStorage.setItem("zip", parkCodeZip)
 }
 
+//creates event listener for search button
 searchButton.addEventListener("click", stateCodeSearch);
 
+
+/*
 //ParkInfo.html js
 // select div to append response
 var divClass = $(".cardPgTwo")
@@ -236,3 +256,4 @@ function retrieveLocation() {
     }
     currentWeather();
 }
+*/
