@@ -19,19 +19,10 @@
             </div>
         </div>
     </div>
-    <div style= "background:white" id="fivedayforecast">
-        <!-- changed card to cardPgTwo -->
-        <div class="cardPgTwo">    
-        <!-- <div class="card">
-            <div class="container">
-                <h2 id="carddate">text</h2>
-                <p class="cardtemp">text</p>
-                <p class="chancerain">text</p>  
-                <p class="rainfall">text</p>
-            </div>
-        </div> used as template for appending weather response-->
-        </div>
-    </div>
+    
+    <div class="grid-container" style= "background:white"  id="fivedayforecast">
+        <div class="grid-x grid-margin-x" id="gridEl"></div>
+    </div> 
     
     <div class="container" style = "background:rgb(215, 156, 68); height:50%;">
         <div style = "border-style: solid; width:75%; display:flex;">
@@ -41,19 +32,23 @@
             <p id = "petsdescription"></p>
         </div>
     </div>
+    <footer class="bottom">
+        <div class="grid-container fluid">
+            <div class="cell large-12">
+                <p>Carefully crafted by Group 1</p>
+            </div>
+            <div class="flex-container">
+                <a href="https://github.com/alexclaytonbootcamp" target="_blank">Alex Clayton</a>        
+                <a href="https://github.com/CECurtiss" target="_blank">Clinton Curtiss</a>
+                <a href="https://github.com/DeadEye44" target="_blank">Josh Torrence</a>
+                <a href="https://github.com/natemuci" target="_blank">Nate Muci</a>
+                <a href="#" target="_blank">Francisco Cruz</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="./assets/weather.js"></script>
 </body>
-<footer class="bottom">
-	<div class="grid-container fluid">
-		<div class="cell large-12">
-			<p>Carefully crafted by Group 1</p>
-		</div>
-		<div class="flex-container">
-			<a href="https://github.com/alexclaytonbootcamp" target="_blank">Alex Clayton</a>        
-			<a href="https://github.com/CECurtiss" target="_blank">Clinton Curtiss</a>
-			<a href="https://github.com/DeadEye44" target="_blank">Josh Torrence</a>
-			<a href="https://github.com/natemuci" target="_blank">Nate Muci</a>
-			<a href="#" target="_blank">Francisco Cruz</a>
-		</div>
-	</div>
-</footer>
+
 </html>
