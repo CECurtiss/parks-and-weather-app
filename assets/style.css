@@ -1,5 +1,6 @@
-body {
+html, body {
   background-color: slategray;
+  height: 100%;
 }
 
 .searchBox {
@@ -15,4 +16,32 @@ h1 {
   margin-top: 3.0rem;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+  border: 3px solid black;
+}
+
+.card-divider {
+  background-color: blue;
+}
+
+.bottom {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(35, 56, 95);
+  color: white;
+  margin-top: 3em;
+  align-content: bottom;
+
+}
+
+a {
+  margin-left: 1em;
+  margin-right: 1em;
+  color: white;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }
