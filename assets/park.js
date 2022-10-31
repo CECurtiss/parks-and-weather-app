@@ -14,7 +14,7 @@ function getParkCode() {
         .then (function(response) {
         return response.json() ;
         })
-        .then (function(response) {f
+        .then (function(response) {
             console.log(response);
             longDescript.textContent = response.data[0].description;
             parkCost.textContent = response.data[0].entranceFees[0].description;
