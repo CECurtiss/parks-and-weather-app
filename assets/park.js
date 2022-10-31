@@ -20,6 +20,8 @@ function getParkCode() {
             parkHours.textContent = response.data.operatingHours.standardHours;
             generalWeather.textContent = response.data.weatherInfo;
             parkContact.textContent = response.data.contacts.emailAddresses.emailAddress;
+            var imgEl = document.createElement('img');
+            imgEl.setAttribute("src", "response.data.images[Math.floor(Math.random()* (response.data.images.length");
         })
     }
     getParkInfo();
