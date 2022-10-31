@@ -4,6 +4,7 @@ var parkHours = document.getElementById('parkhours');
 var petsDecript = document.getElementById('petdescription');
 var generalWeather = document.getElementById('generalweather');
 var parkContact = document.getElementById('parkcontact');
+var parkContainer = document.getElementsByClassName('container');
 
 function getParkCode() {
     var parkCodeSearch = localStorage.getItem('parkcode');
@@ -15,13 +16,15 @@ function getParkCode() {
         })
         .then (function(response) {
             console.log(response);
-            longDescript.textContent = response.data.description;
-            parkCost.textContent = response.data.entranceFees[0].description;
-            parkHours.textContent = response.data.operatingHours.standardHours;
-            generalWeather.textContent = response.data.weatherInfo;
-            parkContact.textContent = response.data.contacts.emailAddresses.emailAddress;
+            longDescript.textContent = response.data[0].description;
+            parkCost.textContent = response.data[0].entranceFees[0].description;
+            parkHours.textContent = response.data[0].operatingHours[0].standardHours;
+            generalWeather.textContent = response.data[0].weatherInfo;
+            parkContact.textContent = response.data[0].contacts.emailAddresses[0].emailAddress;
             var imgEl = document.createElement('img');
-            imgEl.setAttribute("src", "response.data.images[Math.floor(Math.random()* (response.data.images.length");
+            imgEl.src= "response.data.images[Math.floor(Math.random()* (response.data.images.length)]"
+            // imgEl.setAttribute("src", "response.data.images[Math.floor(Math.random()* (response.data.images.length)]");
+            parkContainer.appendChild(imgEl);
         })
     }
     getParkInfo();
