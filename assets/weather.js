@@ -32,17 +32,17 @@ function retrieveLocation() {
                 chanceRain[i] = response.list[i].pop;
                 console.log(weatherIcon);
                 
-                var cardDiv = $("<div>").attr("class", "card").attr("id", "card-1").attr("style", "width: 50px");
+                var cardDiv = $("<div>").attr("class", "card").attr("id", "card-1").attr("style", "width: 15%");
                 gridEl.append(cardDiv);
                 var cardDivider = $("<div>").attr("class", "card-divider")
                 cardDiv.append(cardDivider);
                 var newH4 = $("<h4>").attr("id", "carddate").text(moment(forecastDate[i]).format("dddd   " + "L"));
                 cardDivider.append(newH4);
-                var cardSec = $("<div>").attr("class", "card-section");
+                var cardSec = $("<div>").attr("class", "card-section").attr("id", "secId");
                 cardDiv.append(cardSec);
                 var newIcon = $("<img>").attr("class", "carddate").attr("srs", "https://openweathermap.org/img/wn/" + weatherIcon[i] + "@2x.png");
                 cardSec.append(newIcon);
-                var tempP = $("<p>").attr("class", "cardtemp").attr("style", "margin-top: 16px").text("Temperature: " + temp[i] + "F");
+                var tempP = $("<p>").attr("class", "cardtemp").text("Temperature: " + temp[i] + "F");
                 cardSec.append(tempP);
                 var rainChanceP = $("<p>").attr("class", "cardtemp").text("Chance of Rain: " + chanceRain[i] * 100 + "%");
                 cardSec.append(rainChanceP);
