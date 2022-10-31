@@ -22,7 +22,6 @@ function retrieveLocation() {
             return response.json();
         })
         .then(function(response) {
-            console.log(response);
             for (var i = 0; i < 40; i += 8){
                 forecastDate[i] = response.list[i].dt_txt;
                 weatherIcon[i] = response.list[i].weather[0].icon;
@@ -30,7 +29,7 @@ function retrieveLocation() {
                 humidity[i] = response.list[i].main.humidity;
                 windSpeed[i] = response.list[i].wind.speed;
                 chanceRain[i] = response.list[i].pop;
-                console.log(weatherIcon);
+               
                 
                 var cardDiv = $("<div>").attr("class", "card").attr("id", "card-1").attr("style", "width: 15%");
                 gridEl.append(cardDiv);
