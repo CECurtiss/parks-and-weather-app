@@ -1,14 +1,27 @@
-function getparkcode() {
-Storage.getitem(parkcode)
-    var parkcodesearch = storage.getitem(parkcode)
-    var parkcodeUrl = ('https://developer.nps.gov/api/v1/parks?parkCode=' + parkCodeSearch + '&api_key=PrEprSmQZXCjkYEUgxFRqh1Ybv6fKiFDJIqmU1Iy')
+var longDescript = document.getElementById('longdescript');
+var parkCost = document.getElementById('parkcost');
+var parkHours = document.getElementById('parkhours');
+var petsDecript = document.getElementById('petdescription');
+var generalWeather = document.getElementById('generalweather');
+var parkContact = document.getElementById('parkcontact');
 
-    fetch(parkcodeUrl)
-
-    .then (function(response) {
-        return respomse.json() ;
-    })
-    .then (function(data) {
-        console.log(data);
+function getParkCode() {
+    var parkCodeSearch = localStorage.getItem('parkcode');
+    function getParkInfo() {
+        var parkCodeUrl = ('https://developer.nps.gov/api/v1/parks?parkCode=' + parkCodeSearch + '&api_key=PrEprSmQZXCjkYEUgxFRqh1Ybv6fKiFDJIqmU1Iy')
+        fetch(parkCodeUrl)
+        .then (function(response) {
+        return response.json() ;
+        })
+        .then (function(response) {
+            console.log(response);
+            longDescript.textContent = response.data.description;
+            parkCost.textContent = response.data.entranceFees[0].description;
+            parkHours.textContent = response.data.operatingHours.standardHours;
+            generalWeather.textContent = response.data.weatherInfo;
+            parkContact.textContent = response.data.contacts.emailAddresses.emailAddress;
+        })
     }
+    getParkInfo();
 }
+getParkCode();
