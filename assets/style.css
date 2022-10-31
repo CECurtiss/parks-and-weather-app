@@ -11,13 +11,14 @@ h1 {
   margin-top: 1rem;
   margin-bottom: 3.5rem;
 }
-/* .card {
+.card {
   margin-bottom: 1.5rem;
   margin-top: 3.0rem;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   border: 3px solid black;
-} */
+}
+
 
 .card-divider {
   background-color: blue;
@@ -44,4 +45,22 @@ footer {
   bottom: 0px;
   left: 0px;
   right: 0px;
+}
+.cardtemp {
+  padding-left: 10px;
+}
+#card-1 {
+  border-radius: 10px;
+  border: 3px solid black;
+  margin: 20px;  
+}
+#gridEl {
+  background-color: slategray;
+}
+#carddate{
+  color: white;
+}
+#secId {
+  padding: 0px;
+  padding-bottom: 15px;
 }
