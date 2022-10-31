@@ -4,41 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+    <script src="./assets/script.js" async="false"></script>
     <title>Park Details and 5 Day Forecast</title>
-    <link rel="stylesheet" href="assets\style.css">
 </head>
-<body style="background: rgb(77, 121, 29)">
-    <button id="returntomain">Go Back</button>
-    <header >
-        <h1 style= "font-size:60px; text-align:center; padding: 30px;" id = "parkname">park</h1>
-    </header>
-
-    <div style= "background:white" id="fivedayforecast">
-        <!-- changed card to cardPgTwo -->
-        <div class="cardPgTwo">    
-        <!-- <div class="card">
-            <div class="container">
-                <h2 id="carddate">text</h2>
-                <p class="cardtemp">text</p>
-                <p class="chancerain">text</p>  
-                <p class="rainfall">text</p>
+<body>
+    <a href="./index.html" class="button round">&#8592; Return to results</a>
+    <div class="grid-container fluid">
+        <div class="grid-x grid-margin-x">
+            <div class="cell large-12">
+                <h1 class="text-center">Here are the <i>Park details</i> of your next great adventure!</h1>
             </div>
-        </div> used as template for appending weather response-->
         </div>
     </div>
     
+    <div class="grid-container" style= "background:white"  id="fivedayforecast">
+        <div class="grid-x grid-margin-x" id="gridEl"></div>
+    </div> 
+    
     <div class="container" style = "background:rgb(215, 156, 68); height:50%;">
-         <div style = "border-style: solid; width:75%; display:flex;">
-             <p id = "longdescript">info</p>
-             <p id = "parkcost"></p>
-             <p id = "parkhours"></p>
-             <p id = "petsdescription"></p>
+        <div style = "border-style: solid; width:75%; display:flex;">
+            <p id = "longdescript">info</p>
+            <p id = "parkcost"></p>
+            <p id = "parkhours"></p>
+            <p id = "petsdescription"></p>
         </div>
     </div>
-
-        
-
-    <script src="assets\park.js"></script>
-    <script src="assets\script.js"></script>
-</body>
+    <footer class="bottom">
+        <div class="grid-container fluid">
+            <div class="cell large-12">
+                <p>Carefully crafted by Group 1</p>
+            </div>
+            <div class="flex-container">
+                <a href="https://github.com/alexclaytonbootcamp" target="_blank">Alex Clayton</a>        
+                <a href="https://github.com/CECurtiss" target="_blank">Clinton Curtiss</a>
+                <a href="https://github.com/DeadEye44" target="_blank">Josh Torrence</a>
+                <a href="https://github.com/natemuci" target="_blank">Nate Muci</a>
+                <a href="https://github.com/panncho453" target="_blank">Francisco Cruz</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="./assets/weather.js"></script>
+    <script src="./assets/park.js"></script>
+    <script src="./assets/script.js"></script>
+  </body>
 </html>

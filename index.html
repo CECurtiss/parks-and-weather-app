@@ -14,126 +14,36 @@
         <div class="grid-x grid-margin-x">
             <div class="cell large-12">
                 <h1 class="text-center">Where would you like to take an adventure to?</h1>
+                    <p>Please enter a <strong>state</strong> in the search box below to begin your adventure:</p>
                 <div class="top-bar-right">
                     <ul class="menu">
-                    <li><input class="searchBox" type="search" placeholder="Search"></li>
+                    <li><input id="search-input" class="searchBox" type="search" placeholder="Enter State Name"></li>
                     <li><button id="searchBtn" class="button">Search</button></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <div class="grid-container"> 
-        <div class="grid-x grid-margin-x">   
-            <div id="card-1" class="card" style="width: 250px;">
-                <div class="card-divider">
-                    <h4>Park Card 1</h4>
-                </div>
-                <img src="assets/img/lion3.png">
-                <div class="card-section">
-                    <p></p>
-                </div>
-            </div>
-            <div id="card-2" class="card" style="width: 250px;">
-                <div class="card-divider">
-                    <h4>Park Card 2</h4>
-                </div>
-                <img src="assets/img/lion3.png">
-                <div class="card-section">
-                    <p></p>
-                </div>
-            </div>
-            <div id="card-3" class="card" style="width: 250px;">
-                <div class="card-divider">
-                    <h4>Park Card 3</h4>
-                </div>
-                <img src="assets/img/lion3.png">
-                <div class="card-section">
-                    <p></p>
-                </div>
-            </div>
-            <div id="card-4" class="card" style="width: 250px;">
-                <div class="card-divider">
-                    <h4>Park Card 4</h4>
-                </div>
-                <img src="assets/img/lion3.png">
-                <div class="card-section">
-                    <p></p>
-                </div>
-            </div>
-            <div id="card-5" class="card" style="width: 250px;">
-                <div class="card-divider">
-                    <h4>Park Card 5</h4>
-                </div>
-                <img src="assets/img/lion3.png">
-                <div class="card-section">
-                    <p></p>
-                </div>
-            </div>
-            <div id="card-6" class="card" style="width: 250px;">
-                <div class="card-divider">
-                    <h4>Park Card 6</h4>
-                </div>
-                <img src="assets/img/lion3.png">
-                <div class="card-section">
-                    <p></p>
-                </div>
-            </div>
-            <div id="card-7" class="card" style="width: 250px;">
-                <div class="card-divider">
-                    <h4>Park Card 7</h4>
-                </div>
-                <img src="assets/img/lion3.png">
-                <div class="card-section">
-                    <p></p>
-                </div>
-            </div>
-            <div id="card-8" class="card" style="width: 250px;">
-                <div class="card-divider">
-                    <h4>Park Card 8</h4>
-                </div>
-                <img src="assets/img/lion3.png">
-                <div class="card-section">
-                    <p></p>
-                </div>
-            </div>
-            <div id="card-9" class="card" style="width: 250px;">
-                <div class="card-divider">
-                    <h4>Park Card 9</h4>
-                </div>
-                <img src="assets/img/lion3.png">
-                <div class="card-section">
-                    <p></p>
-                </div>
-            </div>
-            <div id="card-10" class="card" style="width: 250px;">
-                <div class="card-divider">
-                    <h4>Park Card 10</h4>
-                </div>
-                <img src="assets/img/lion3.png">
-                <div class="card-section">
-                    <p></p>
-                </div>
-            </div>
-            <div id="card-11" class="card" style="width: 250px;">
-                <div class="card-divider">
-                    <h4>Park Card 11</h4>
-                </div>
-                <img src="assets/img/lion3.png">
-                <div class="card-section">
-                    <p></p>
-                </div>
-            </div>
-            <div id="card-12" class="card" style="width: 250px;">
-                <div class="card-divider">
-                    <h4>Park Card 12</h4>
-                </div>
-                <img src="assets/img/lion3.png">
-                <div class="card-section">
-                    <p></p>
-                </div>
-            </div>
+    <!-- fluid class set for container responsiveness to viewport size -->
+    <div class="grid-container fluid">
+        <!--container for dynamically created park cards  -->
+        <div id="park-card-container" class="grid-x grid-margin-x">  
         </div>
-    </div>    
+    </div>
+    <script src="./assets/script.js"></script>
 </body>
+<footer class="bottom">
+	<div class="grid-container fluid">
+		<div class="cell large-12">
+			<p>Carefully crafted by Group 1</p>
+		</div>
+		<div class="flex-container">
+			<a href="https://github.com/alexclaytonbootcamp" target="_blank">Alex Clayton</a>        
+			<a href="https://github.com/CECurtiss" target="_blank">Clinton Curtiss</a>
+			<a href="https://github.com/DeadEye44" target="_blank">Josh Torrence</a>
+			<a href="https://github.com/natemuci" target="_blank">Nate Muci</a>
+			<a href="#" target="_blank">Francisco Cruz</a>
+		</div>
+	</div>
+</footer>  
 </html>
