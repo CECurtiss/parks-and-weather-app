@@ -1,9 +1,9 @@
 # parks-and-weather-app
 
-##Description
+## Description
 This is a United States national park trip planner webpage created by group 1 in the KU Coding Bootcamp.  This page utilizes HTML, CSS, and JavaScript, interfaces with the NPS API and OpenWeather API, and incorporates the jQuery and Foundation libraries.  It allows the user to find a list of US national parks located within a specified state, and upon selecting a park, the user is redirected to a park page that displays a 5 day weather forecast and detailed park information.  
 
-##User Story
+## User Story
 As a USER, I want to find a national park in a state I'm traveling to, and learn what I can do and how the weather looks.
 
 SO THAT
@@ -23,7 +23,7 @@ THEN I see a group of park details including a brief park description, hours of 
 WHEN I click a back button on the park page
 THEN I am redirected back to the main state search page
 
-##Contributors
+## Contributors
 This project was created by the 5 members of group 1.
 Alex Clayton 
 Clinton Curtiss
@@ -31,6 +31,6 @@ Nate Muci
 Josh Torrence
 Francisco Cruz
 
-##Resources
+## Resources
 NPS API Documentation [https://www.nps.gov/subjects/developer/api-documentation.htm]
 OpenWeather API Documention [https://openweathermap.org/forecast5]
