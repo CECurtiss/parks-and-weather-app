@@ -5,6 +5,7 @@ var petsDecript = document.getElementById('petdescription');
 var generalWeather = document.getElementById('generalweather');
 var parkContact = document.getElementById('parkcontact');
 var parkContainer = document.querySelector('.container');
+var parkName = document.querySelector('parkname');
 
 function getParkCode() {
     var parkCodeSearch = localStorage.getItem('parkcode');
@@ -16,9 +17,13 @@ function getParkCode() {
         })
         .then (function(response) {
             console.log(response);
+            // parkName.textContent = response.data[0].name;
             var imgEl = document.createElement('img');
             imgEl.setAttribute("src", response.data[0].images[Math.floor(Math.random()* (response.data[0].images.length))].url);
-            parkContainer.appendChild(imgEl);
+            var imgDivEl = document.createElement('div');
+            imgDivEl.classList.add("imagediv");
+            imgDivEl.appendChild(imgEl);
+            parkContainer.appendChild(imgDivEl);
             console.log(parkHours.textContent);
             longDescript.textContent = response.data[0].description;
             parkCost.textContent = response.data[0].entranceFees[0].description;
