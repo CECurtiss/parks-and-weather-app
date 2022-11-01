@@ -29,7 +29,7 @@ function retrieveLocation() {
                 temp[i] = Math.floor(response.list[i].main.temp);
                 humidity[i] = Math.floor(response.list[i].main.humidity);
                 windSpeed[i] = Math.floor(response.list[i].wind.speed);
-                chanceRain[i] = Math.floor(response.list[i].pop);
+                chanceRain[i] = Math.floor(response.list[i].pop * 100);
                
                 
                 var cardDiv = $("<div>").attr("class", "card").attr("id", "card-1").attr("style", "width: 15%");
@@ -44,7 +44,7 @@ function retrieveLocation() {
                 cardSec.append(newIcon);
                 var tempP = $("<p>").attr("class", "cardtemp").text("Temperature: " + temp[i] + "F");
                 cardSec.append(tempP);
-                var rainChanceP = $("<p>").attr("class", "cardtemp").text("Chance of Rain: " + chanceRain[i] * 100 + "%");
+                var rainChanceP = $("<p>").attr("class", "cardtemp").text("Chance of Rain: " + chanceRain[i] + "%");
                 cardSec.append(rainChanceP);
                 var newHum = $("<p>").attr("class", "cardtemp").text("Humidity: " + humidity[i] + "%");
                 cardSec.append(newHum)
