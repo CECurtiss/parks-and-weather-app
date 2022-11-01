@@ -77,3 +77,12 @@ footer {
   padding-bottom: 60vh;
   image-rendering: transparent;
 }
+.container {
+  background-color: rgba(255, 228, 196, 0.714);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 2px solid black;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
