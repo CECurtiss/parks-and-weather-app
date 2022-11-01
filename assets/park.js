@@ -22,8 +22,8 @@ function getParkCode() {
             generalWeather.textContent = response.data[0].weatherInfo;
             parkContact.textContent = response.data[0].contacts.emailAddresses[0].emailAddress;
             var imgEl = document.createElement('img');
-            // imgEl.src= response.data.images[Math.floor(Math.random()* (response.data.images.length))]
-            imgEl.setAttribute("src", "response.data.images[Math.floor(Math.random()* (response.data.images.length)]");
+            imgEl.src= "response.data.images[Math.floor(Math.random()* (response.data.images.length)]"
+            // imgEl.setAttribute("src", "response.data.images[Math.floor(Math.random()* (response.data.images.length)]");
             parkContainer.appendChild(imgEl);
         })
     }
