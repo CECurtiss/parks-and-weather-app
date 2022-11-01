@@ -4,7 +4,7 @@ var parkHours = document.getElementById('parkhours');
 var petsDecript = document.getElementById('petdescription');
 var generalWeather = document.getElementById('generalweather');
 var parkContact = document.getElementById('parkcontact');
-var parkContainer = document.getElementsByClassName('container');
+var parkContainer = document.querySelector('.container');
 
 function getParkCode() {
     var parkCodeSearch = localStorage.getItem('parkcode');
@@ -28,8 +28,7 @@ function getParkCode() {
             generalWeather.textContent = response.data[0].weatherInfo;
             parkContact.textContent = response.data[0].contacts.emailAddresses[0].emailAddress;
             var imgEl = document.createElement('img');
-            imgEl.src= "response.data[0].images[Math.floor(Math.random()* (response.data.images.length)]"
-            // imgEl.setAttribute("src", "response.data.images[Math.floor(Math.random()* (response.data.images.length)]");
+            imgEl.setAttribute("src", response.data[0].images[Math.floor(Math.random()* (response.data[0].images.length))].url);
             parkContainer.appendChild(imgEl);
             console.log(parkHours.textContent);
         })
