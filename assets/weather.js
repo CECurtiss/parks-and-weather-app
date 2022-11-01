@@ -16,7 +16,7 @@ function retrieveLocation() {
     var lat = JSON.parse(localStorage.getItem("lat"));
     var lon = JSON.parse(localStorage.getItem("lon"));
     function currentWeather(){
-        var weatherUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=f5ca5829ecc4bf04f1d13831ce88f110";
+        var weatherUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=f5ca5829ecc4bf04f1d13831ce88f110";
         
         fetch(weatherUrl)
         .then(function(response){
