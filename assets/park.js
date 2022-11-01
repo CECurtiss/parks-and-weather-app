@@ -16,21 +16,36 @@ function getParkCode() {
         })
         .then (function(response) {
             console.log(response);
-            longDescript.textContent = response.data[0].description;
-            parkCost.textContent = response.data[0].entranceFees[0].description;
-            var hoursObject = response.data[0].operatingHours[0].standardHours;
-            for (key in hoursObject) {
-                var dayEl = document.createElement('p');
-                dayEl.textContent = key + " " + hoursObject[key];
-                parkHours.appendChild(dayEl);
-            }
-           
-            generalWeather.textContent = response.data[0].weatherInfo;
-            parkContact.textContent = response.data[0].contacts.emailAddresses[0].emailAddress;
             var imgEl = document.createElement('img');
             imgEl.setAttribute("src", response.data[0].images[Math.floor(Math.random()* (response.data[0].images.length))].url);
             parkContainer.appendChild(imgEl);
             console.log(parkHours.textContent);
+            longDescript.textContent = response.data[0].description;
+            parkCost.textContent = response.data[0].entranceFees[0].description;
+            var sundayEl = document.createElement('p')
+            sundayEl.textContent = "Sunday - " + response.data[0].operatingHours[0].standardHours.sunday;
+            parkHours.appendChild(sundayEl);
+            var mondayEl = document.createElement('p')
+            mondayEl.textContent = "Monday - " + response.data[0].operatingHours[0].standardHours.monday;
+            parkHours.appendChild(mondayEl);
+            var tuesdayEl = document.createElement('p')
+            tuesdayEl.textContent = "Tuesday - " + response.data[0].operatingHours[0].standardHours.tuesday;
+            parkHours.appendChild(tuesdayEl);
+            var wednesdayEl = document.createElement('p')
+            wednesdayEl.textContent = "Wednesday - " + response.data[0].operatingHours[0].standardHours.wednesday;
+            parkHours.appendChild(wednesdayEl);
+            var thursdayEl = document.createElement('p')
+            thursdayEl.textContent = "Thursday - " + response.data[0].operatingHours[0].standardHours.thursday;
+            parkHours.appendChild(thursdayEl);
+            var fridayEl = document.createElement('p')
+            fridayEl.textContent = "Friday - " + response.data[0].operatingHours[0].standardHours.friday;
+            parkHours.appendChild(fridayEl);
+            var saturdayEl = document.createElement('p')
+            saturdayEl.textContent = "Saturday - " + response.data[0].operatingHours[0].standardHours.saturday;
+            parkHours.appendChild(saturdayEl);
+                       
+            generalWeather.textContent = response.data[0].weatherInfo;
+            parkContact.textContent = "Park Contact info: " + response.data[0].contacts.emailAddresses[0].emailAddress;
         })
     }
     getParkInfo();
