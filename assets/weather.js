@@ -13,9 +13,10 @@ var rainVol = {};
 var currentDate = moment().format('L');
 
 function retrieveLocation() {
-    var location = JSON.parse(localStorage.getItem("zip"));
+    var lat = JSON.parse(localStorage.getItem("lat"));
+    var lon = JSON.parse(localStorage.getItem("lon"));
     function currentWeather(){
-        var weatherUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + location + "&units=imperial&appid=f5ca5829ecc4bf04f1d13831ce88f110";
+        var weatherUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=f5ca5829ecc4bf04f1d13831ce88f110";
         
         fetch(weatherUrl)
         .then(function(response){
@@ -25,10 +26,10 @@ function retrieveLocation() {
             for (var i = 0; i < 40; i += 8){
                 forecastDate[i] = response.list[i].dt_txt;
                 weatherIcon[i] = response.list[i].weather[0].icon;
-                temp[i] = response.list[i].main.temp;
-                humidity[i] = response.list[i].main.humidity;
-                windSpeed[i] = response.list[i].wind.speed;
-                chanceRain[i] = response.list[i].pop;
+                temp[i] = Math.floor(response.list[i].main.temp);
+                humidity[i] = Math.floor(response.list[i].main.humidity);
+                windSpeed[i] = Math.floor(response.list[i].wind.speed);
+                chanceRain[i] = Math.floor(response.list[i].pop * 100);
                
                 
                 var cardDiv = $("<div>").attr("class", "card").attr("id", "card-1").attr("style", "width: 15%");
@@ -39,11 +40,11 @@ function retrieveLocation() {
                 cardDivider.append(newH4);
                 var cardSec = $("<div>").attr("class", "card-section").attr("id", "secId");
                 cardDiv.append(cardSec);
-                var newIcon = $("<img>").attr("class", "carddate").attr("srs", "https://openweathermap.org/img/wn/" + weatherIcon[i] + "@2x.png");
+                var newIcon = $("<img>").attr("class", "carddate").attr("src", "https://openweathermap.org/img/wn/" + weatherIcon[i] + "@2x.png");
                 cardSec.append(newIcon);
                 var tempP = $("<p>").attr("class", "cardtemp").text("Temperature: " + temp[i] + "F");
                 cardSec.append(tempP);
-                var rainChanceP = $("<p>").attr("class", "cardtemp").text("Chance of Rain: " + chanceRain[i] * 100 + "%");
+                var rainChanceP = $("<p>").attr("class", "cardtemp").text("Chance of Rain: " + chanceRain[i] + "%");
                 cardSec.append(rainChanceP);
                 var newHum = $("<p>").attr("class", "cardtemp").text("Humidity: " + humidity[i] + "%");
                 cardSec.append(newHum)
