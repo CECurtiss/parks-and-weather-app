@@ -32,7 +32,8 @@ function retrieveLocation() {
                 chanceRain[i] = Math.floor(response.list[i].pop * 100);
                
                 
-                var cardDiv = $("<div>").attr("class", "card").attr("id", "card-1").attr("style", "width: 15%");
+                var cardDiv = $("<div>").attr("class", "card").attr("id", "card-1");
+                // .attr("style", "width: 15%")
                 gridEl.append(cardDiv);
                 var cardDivider = $("<div>").attr("class", "card-divider")
                 cardDiv.append(cardDivider);
