@@ -117,7 +117,9 @@ function stateCodeSearch() {
         var stateCode = "wy"
     //If text entered is not recognized as a valid state name, alert box prompts user to enter valid state name
     } else {
-        window.alert("PLEASE ENTER A VALID STATE NAME");
+        var invalidState = document.createElement("h4");
+        invalidState.innerHTML = 'Unable to find any results for "' + stateName + '". Please enter a valid state name.';
+        parkCardContainer.appendChild(invalidState);
         console.log("ERROR");
     }
     console.log(stateCode);
@@ -154,7 +156,8 @@ function stateCodeSearch() {
             //sets id as parkCode to be saved in local storage for use in parkinfo.html
             nameEl.setAttribute("id", data.data[i].parkCode);
             //sets title to zip code to be saved in local storage for use in parkinfo.html
-            nameEl.setAttribute("title", data.data[0].addresses[0].postalCode);
+            nameEl.setAttribute("title", data.data[i].latitude);
+            nameEl.setAttribute("rel", data.data[i].longitude);
             //creates onclick function to save to local storage
             nameEl.setAttribute("onclick", "storeParkCode()");  
             nameEl.innerHTML = data.data[i].fullName;
@@ -164,7 +167,17 @@ function stateCodeSearch() {
             //creates image element
             var imgEl = document.createElement("img");
             //sets image element to specific park image
-            imgEl.setAttribute("src", data.data[i].images[0].url);
+            imgEl.setAttribute("src", data.data[i].images[Math.floor(Math.random() * (data.data[i].images.length))].url)
+                // var imgNextBtn = document.createElement("button");
+                // imgNextBtn.setAttribute("onclick", "nextImage()");
+                // imgNextBtn.setAttribute("id", "next-image-btn");
+                // imgNextBtn.setAttribute("title", data.data[i].parkCode)
+            // imgNextBtn.setAttribute("")
+                // var imgPrevBtn = document.createElement("button");
+                // imgPrevBtn.setAttribute("onclick", "previousImage()");
+                // imgPrevBtn.setAttribute("id", "previous-image-btn");
+                // imgPrevBtn.setAttribute("title", data.data[i].parkCode)
+            // imgPrevBtn.setAttribute("onclick", )
             //creates park description div
             var descriptionElContainer = document.createElement("div");
             //creates park description paragraph element
@@ -174,7 +187,11 @@ function stateCodeSearch() {
             //appends above created children elements to their respective parents
             imgDiv.appendChild(imgEl);
             descriptionElContainer.appendChild(descriptionEl);
+    //can't get the previous/next image butons to display in the HTML...
+                // nameElContainer.appendChild(imgPrevBtn);
             nameElContainer.appendChild(nameEl);
+                // nameElContainer.appendChild(imgNextBtn);
+            
             containerEl.appendChild(nameElContainer);
             containerEl.appendChild(imgDiv);
             containerEl.appendChild(descriptionElContainer);
@@ -183,19 +200,24 @@ function stateCodeSearch() {
             }      
         })
     }
-
     searchState();
 }
+
+// function nextImage() {
+
+//}
 
 //function to set unique park code/zip code information to local storage
 function storeParkCode() {
     //defines variable for park code
     var parkCodeID = window.event.target.id
     //defines variable for zip code
-    var parkCodeZip = window.event.target.title
+    var parkCodeLat = window.event.target.title
+    var parkCodeLon = window.event.target.rel
     //sets park code, zip code to local storage
     localStorage.setItem("parkcode", parkCodeID)
-    localStorage.setItem("zip", parkCodeZip)
+    localStorage.setItem("lat", parkCodeLat)
+    localStorage.setItem("lon", parkCodeLon)
 }
 
 //creates event listener for search button
