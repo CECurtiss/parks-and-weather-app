@@ -95,7 +95,7 @@ footer {
   margin: 1rem;
   padding: 1rem;
   background-color: rgba(255, 228, 196, 0.714);
-  display: flex;
+  display: block;
   align-items: center;
   gap: 1rem;
   border: 2px solid black;
