@@ -28,8 +28,10 @@ h1 {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   border: 3px solid black;
+  width: 15%;
 }
 .card-divider {
+  height: 30%;
   background-color: blue;
 }
 .bottom {
@@ -66,6 +68,7 @@ footer {
   background-color: slategray;
 }
 #carddate{
+  white-space: pre;
   color: white;
 }
 #secId {

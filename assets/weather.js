@@ -23,6 +23,7 @@ function retrieveLocation() {
             return response.json();
         })
         .then(function(response) {
+            console.log(response);
             for (var i = 0; i < 40; i += 8){
                 forecastDate[i] = response.list[i].dt_txt;
                 weatherIcon[i] = response.list[i].weather[0].icon;
@@ -37,7 +38,7 @@ function retrieveLocation() {
                 gridEl.append(cardDiv);
                 var cardDivider = $("<div>").attr("class", "card-divider")
                 cardDiv.append(cardDivider);
-                var newH4 = $("<h4>").attr("id", "carddate").text(moment(forecastDate[i]).format("dddd   " + "L"));
+                var newH4 = $("<h4>").attr("id", "carddate").text(moment(forecastDate[i]).format("dddd [\n]L"));
                 cardDivider.append(newH4);
                 var cardSec = $("<div>").attr("class", "card-section").attr("id", "secId");
                 cardDiv.append(cardSec);
