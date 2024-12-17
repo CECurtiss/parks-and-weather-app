@@ -1,12 +1,13 @@
-html, body {
-  height:100vh; 
+html,
+body {
+  height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
 }
 html {
   position: relative;
-  min-height: 100%
+  min-height: 100%;
 }
 
 body {
@@ -24,15 +25,15 @@ h1 {
 }
 .card {
   margin-bottom: 1.5rem;
-  margin-top: 3.0rem;
+  margin-top: 3rem;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
-  border: 3px solid black;;
+  border: 3px solid black;
 }
 
 .weatherCard {
   margin-bottom: 1.5rem;
-  margin-top: 3.0rem;
+  margin-top: 3rem;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   border: 3px solid black;
@@ -51,7 +52,6 @@ h1 {
   color: white;
   margin-top: 3em;
   align-content: bottom;
-
 }
 a {
   margin-left: 1em;
@@ -64,7 +64,7 @@ footer {
   left: 0;
   bottom: 0;
   height: auto;
-  width: 100%;  
+  width: 100%;
 }
 .cardtemp {
   padding-left: 10px;
@@ -72,13 +72,13 @@ footer {
 #card-1 {
   border-radius: 10px;
   border: 3px solid black;
-  margin: 20px;  
+  margin: 20px;
 }
 #gridEl {
   justify-content: center;
   background-color: slategray;
 }
-#carddate{
+#carddate {
   white-space: pre;
   color: white;
 }
@@ -91,7 +91,9 @@ footer {
   padding-bottom: 60vh;
   image-rendering: transparent;
 }
-.container {
+.parkContainer {
+  margin: 1rem;
+  padding: 1rem;
   background-color: rgba(255, 228, 196, 0.714);
   display: flex;
   align-items: center;
