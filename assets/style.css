@@ -27,9 +27,19 @@ h1 {
   margin-top: 3.0rem;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+  border: 3px solid black;;
+}
+
+.weatherCard {
+  margin-bottom: 1.5rem;
+  margin-top: 3.0rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
   border: 3px solid black;
+  background-color: white;
   width: 15%;
 }
+
 .card-divider {
   height: 30%;
   background-color: blue;
@@ -65,6 +75,7 @@ footer {
   margin: 20px;  
 }
 #gridEl {
+  justify-content: center;
   background-color: slategray;
 }
 #carddate{

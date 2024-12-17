@@ -197,10 +197,10 @@ function stateCodeSearch() {
 //function to set unique park code/zip code information to local storage
 function storeParkCode() {
     //defines variable for park code
-    var parkCodeID = window.event.target.id
+    var parkCodeID = window.target.id
     //defines variable for zip code
-    var parkCodeLat = window.event.target.title
-    var parkCodeLon = window.event.target.rel
+    var parkCodeLat = window.target.title
+    var parkCodeLon = window.target.rel
     //sets park code, zip code to local storage
     localStorage.setItem("parkcode", parkCodeID)
     localStorage.setItem("lat", parkCodeLat)
