@@ -71,7 +71,6 @@ function getParkCode() {
 
         generalWeather.textContent = response.data[0].weatherInfo;
         parkContact.textContent =
-          "Park Contact info: " +
           response.data[0].contacts.emailAddresses[0].emailAddress;
       });
   }
